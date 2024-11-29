@@ -29,7 +29,7 @@
         </section>
         
         <footer>
-            <p>&copy; 2024 jos. All rights reserved.</p>
+            <p>&copy; 2024 booknest. All rights reserved.</p>
         </footer>
     </div>
 </body>

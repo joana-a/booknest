@@ -3,102 +3,81 @@ require('db_cred.php');
 
 class db_connection
 {
-	
-	//properties
-	public $db = null;
-	public $results = null;
+    // Properties
+    public $db = null;
+    public $results = null;
 
-	
-	function db_connect(){
-		
-		//connection
-		$this->db = mysqli_connect(SERVER,USERNAME,PASSWD,DATABASE);
-		
-		//test the connection
-		if (mysqli_connect_errno()) {
-			return false;
-		}else{
-			return true;
-		}
-	}
+    // Connect to the database
+    public function db_connect()
+    {
+        // Connection
+        $this->db = mysqli_connect(SERVER, USERNAME, PASSWD, DATABASE);
 
-	function db_conn(){
-		
-		$this->db = mysqli_connect(SERVER,USERNAME,PASSWD,DATABASE);
-		
-		if (mysqli_connect_errno()) {
-			return false;
-		}else{
-			return $this->db;
-		}
-	}
+        // Test the connection
+        if (mysqli_connect_errno()) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 
+    // Return connection object
+    public function db_conn()
+    {
+        $this->db = mysqli_connect(SERVER, USERNAME, PASSWD, DATABASE);
 
-	
-	function db_query($sqlQuery){
-		
-		if (!$this->db_connect()) {
-			return false;
-		}  
-		elseif ($this->db==null) {
-			return false;
-		} 
+        if (mysqli_connect_errno()) {
+            return false;
+        } else {
+            return $this->db;
+        }
+    }
 
-		$this->results = mysqli_query($this->db,$sqlQuery);
-		
-		if ($this->results == false) {
-			return false;
-		}else{
-			return true;
-		}
-	}
+    // Execute query
+    public function db_query($sqlQuery)
+    {
+        if (!$this->db_connect()) {
+            return false;
+        } elseif ($this->db == null) {
+            return false;
+        }
 
-		function db_query_escape_string($sqlQuery){
-		
-		$this->results = mysqli_query($this->db,$sqlQuery);
-		
-		if ($this->results == false) {
-			return false;
-		}else{
-			return true;
-		}
-	}
+        $this->results = mysqli_query($this->db, $sqlQuery);
 
-	
-	function db_fetch_one($sql){
-		
-		if(!$this->db_query($sql)){
-			return false;
-		} 
-		return mysqli_fetch_assoc($this->results);
-	}
+        if ($this->results == false) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 
-	//fetch all data
-	
-	function db_fetch_all($sql){
-		
-		if(!$this->db_query($sql)){
-			return false;
-		} 
-		//return all record
-		return mysqli_fetch_all($this->results, MYSQLI_ASSOC);
-	}
+    // Fetch one row
+    public function db_fetch_one($sql)
+    {
+        if (!$this->db_query($sql)) {
+            return false;
+        }
+        return mysqli_fetch_assoc($this->results);
+    }
 
+    // Fetch all rows
+    public function db_fetch_all($sql)
+    {
+        if (!$this->db_query($sql)) {
+            return false;
+        }
+        return mysqli_fetch_all($this->results, MYSQLI_ASSOC);
+    }
 
-	
-	function db_count(){
-		
-		if ($this->results == null) {
-			return false;
-		}
-		elseif ($this->results == false) {
-			return false;
-		}
-		
-		return mysqli_num_rows($this->results);
+    // Get row count
+    public function db_count()
+    {
+        if ($this->results == null) {
+            return false;
+        } elseif ($this->results == false) {
+            return false;
+        }
 
-	}
-	
+        return mysqli_num_rows($this->results);
+    }
 }
-
-

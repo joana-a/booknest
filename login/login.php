@@ -4,28 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
-
+    <link rel="stylesheet" type="text/css" href="../css/loginstyle.css">
 </head>
 <body>
     <div class="banner">
         <h2>Login</h2>
     </div>  
 
-
     <?php
     session_start();
     if (isset($_SESSION['error'])) {
-        echo "<div style='color: red;'>" . $_SESSION['error'] . "</div>";
+        echo "<div class='error-message'>" . $_SESSION['error'] . "</div>";
         unset($_SESSION['error']); 
     } 
     ?>
 
-    <form id="loginForm" action="../actions/loginprocess.php" method="POST">
-        <input type="username" name="username" placeholder="Username" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <button type="submit">Login</button>
-        <p>Don't have an account? <a href="../login/register.php">Sign Up!</a></p>
-    </form>
+    <div class="login-container">
+        <form id="loginForm" action="../actions/loginprocess.php" method="POST">
+            <div class="form-group">
+                <input type="text" name="username" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+            <p class="signup-link">Don't have an account? <a href="../login/register.php">Sign Up!</a></p>
+        </form>
+    </div>
 </body>
 </html>

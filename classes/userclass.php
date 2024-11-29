@@ -32,13 +32,11 @@ class user_class extends db_connection
         $result = $this->db_fetch_one($sql);
         
         if (!$result) {
-            echo "Error: " . mysqli_error($ndb->db_conn());
             return false;
         }
         
         if ($result != null){
 
-            echo "There is a record in db";
             $user = $result;
             if (password_verify($password, $user['password'])) {
                 return $user;
