@@ -12,7 +12,7 @@ class bookClass extends db_connection
     $keywords = mysqli_real_escape_string($this->db_conn(), $keywords);
     $imagePath = mysqli_real_escape_string($this->db_conn(), $imagePath);
     $quantity = mysqli_real_escape_string($this->db_conn(), $quantity);
-
+ 
     $sql = "INSERT INTO `books` (`title`, `author`, `genre`, `price`, `book_condition`, `keywords`, `image`, `quantity`) 
             VALUES ('$title', '$author', '$genre', '$price', '$bookcondition', '$keywords', '$imagePath', '$quantity')";
 
@@ -44,7 +44,7 @@ class bookClass extends db_connection
 
     public function viewTopbooks(){
         $ndb = new db_connection();
-        $sql = "SELECT * FROM books LIMIT 16";
+        $sql = "SELECT * FROM books LIMIT 15";
         return $this->db_fetch_all($sql); 
     }
 

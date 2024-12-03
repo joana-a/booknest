@@ -21,7 +21,7 @@ if (isset($_SESSION['user_id'])) {
    <link rel="stylesheet" href="../css/stylee.css">
 </head>
 <body>
-<?php include '../view/header.php'; ?>
+<?php include '../view/header.php'; ?> 
 
 <section class="home">
    <div class="content">

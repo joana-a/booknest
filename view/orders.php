@@ -33,17 +33,15 @@ if (isset($_SESSION['user_id'])) {
    <div class="box-container">
       <?php
       require_once '../controllers/order_controller.php';
-      $orderItems = viewOrder_ctr($customer_id);
+      $orderItems = viewAllOrders_ctr($customer_id);
 
       if (!empty($orderItems)) {
          foreach ($orderItems as $item) { ?>
             <div class="box">
                <p>Placed on: <span><?php echo $item['created_at']; ?></span></p>
-               <p>Quantity: <span><?php echo $item['quantity']; ?></span></p>
-               <p>Price per item: <span>$<?php echo $item['price']; ?></span></p>
                <p>Total amount: <span>$<?php echo $item['total_amount']; ?></span></p>
                <p>Order status: 
-                  <span style="color: <?php echo ($item['order_status'] == 'Pending') ? 'red' : 'green'; ?>;">
+                  <span style="color: <?php echo ($item['order_status'] == 'Completed') ? 'red' : 'green'; ?>;">
                      <?php echo $item['order_status']; ?>
                   </span>
                </p>

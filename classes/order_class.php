@@ -36,22 +36,23 @@ class order_class extends db_connection {
     public function viewOrder($userId) {
         $userId = mysqli_real_escape_string($this->db_conn(), $userId);
 
-        $sql = "SELECT 
-                    o.order_id, 
-                    o.total_amount, 
-                    o.order_status, 
-                    o.created_at, 
-                    oi.book_id, 
-                    oi.quantity, 
-                    oi.price
-                FROM 
-                     orders o
-                JOIN 
-                    order_items oi 
-                ON 
-                    o.order_id = oi.order_id
-                WHERE 
-                    o.user_id = '$userId'";
+        $sql = "SELECT o.order_id, o.total_amount, o.created_at, o.order_status 
+                    FROM orders o 
+                    WHERE o.user_id = '$userId' 
+                    ORDER BY o.order_id DESC LIMIT 1" ;
+
+
+        return $this->db_fetch_all($sql);
+    }
+
+    public function viewAllOrders($userId) {
+        $userId = mysqli_real_escape_string($this->db_conn(), $userId);
+
+        $sql = "SELECT o.order_id, o.total_amount, o.created_at, o.order_status 
+                    FROM orders o 
+                    WHERE o.user_id = '$userId' 
+                    ORDER BY o.order_id DESC" ;
+
 
         return $this->db_fetch_all($sql);
     }

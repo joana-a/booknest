@@ -11,7 +11,6 @@
 <body>
    
 <?php 
-include 'header.php'; 
 require '../controllers/order_controller.php';
 
 session_start();
@@ -21,8 +20,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $customer_id = $_SESSION['user_id'];
-
-// Fetch total amount from the database
+ 
 $totalAmount = 0;
 $orderData = viewOrder_ctr($customer_id); 
 if (!empty($orderData)) {
@@ -30,6 +28,7 @@ if (!empty($orderData)) {
         $totalAmount += $order['total_amount'];
     }
 }
+include 'header.php'; 
 ?> 
 
 <div class="heading">
@@ -39,7 +38,7 @@ if (!empty($orderData)) {
 
 <section class="checkout">
 
-   <form id="paymentForm">
+   <form id="paymentForm" method= "post">
       <h3>Place Your Order</h3>
       <div class="flex">
          <div class="inputBox">

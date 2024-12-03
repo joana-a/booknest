@@ -26,15 +26,15 @@ if (isset($_SESSION['user_id'])) {
     <div class="header-2">
         <div class="flex">
             <a href="../view/home.php" class="logo">booknest <3 </a>
-            <span style="font-size:x-large;">Browse by genre --> </span>
+            <span style="font-size:x-large;">Browse genres-> </span>
             <nav class="navbar">
             <a href="books_by_genre.php?genre=romance">Romance</a>
 <a href="books_by_genre.php?genre=fantasy">Fantasy</a>
 <a href="books_by_genre.php?genre=thriller">Thriller</a>
-<a href="books_by_genre.php?genre=afrilit">African Literature</a>
+<a href="books_by_genre.php?genre=afrilit">African</a>
 <a href="books_by_genre.php?genre=scifi">Sci-Fi</a>
 <a href="books_by_genre.php?genre=textbooks">Textbooks</a>
-<a href="books_by_genre.php?genre=nonfiction">Non-Fiction</a>
+<!-- <a href="books_by_genre.php?genre=nonfiction">Non-Fiction</a> -->
 
             </nav>
             <div class="icons">

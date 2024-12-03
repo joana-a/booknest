@@ -19,6 +19,11 @@ function viewOrder_ctr($userId){
     return $newOrder->viewOrder($userId);
 }
 
+function viewAllOrders_ctr($userId){
+    $newOrder = new order_class();
+    return $newOrder->viewAllOrders($userId);
+}
+
 
     
 

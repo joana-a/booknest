@@ -41,10 +41,17 @@ class cart_class extends db_connection {
         return $this->db_fetch_all($sql); 
 
     }
-
+ 
     public function deleteCart($bookId) {
         $bookId = mysqli_real_escape_string($this->db_conn(), $bookId);
         $sql = "DELETE FROM cart WHERE book_id = '$bookId'";
         return $this->db_query($sql);
     }
+
+    public function clearUserCart($userId) {
+        $userId = mysqli_real_escape_string($this->db_conn(), $userId);
+        $sql = "DELETE FROM `cart` WHERE `user_id` = '$userId'";
+        return $this->db_query($sql);
+    }
+    
 }

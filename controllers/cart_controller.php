@@ -21,3 +21,8 @@
    $cartClass= new cart_class();
    return $cartClass->updateCart($bookId, $quantity);
  }
+
+ function clearUserCart_ctr($userId){
+  $cartClass= new cart_class();
+  return $cartClass->clearUserCart($userId);
+ }
