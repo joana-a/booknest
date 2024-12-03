@@ -3,7 +3,7 @@
 
    <div class="flex">
 
-      <a href="../view/admin_books.php" class="logo">Admin<span>Panel</span></a>
+      <a href="../view/admin_dashboard.php" class="logo">Admin<span>Panel</span></a>
 
       <nav class="navbar">
          <a href="../view/admin_dashboard.php">home</a>

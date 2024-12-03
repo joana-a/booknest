@@ -80,10 +80,10 @@ class bookClass extends db_connection
         $sql = "SELECT * FROM books where genre = '$afrilit'";
         return $this->db_fetch_all($sql); 
     }
-    public function viewTextbooks($textbooks){
+    public function viewTextbooks($textbook){
         $ndb = new db_connection();
-        $textbooks = mysqli_real_escape_string($this->db_conn(), $textbooks); 
-        $sql = "SELECT * FROM books where genre = '$textbooks'";
+        $textbook = mysqli_real_escape_string($this->db_conn(), $textbook); 
+        $sql = "SELECT * FROM books where genre = '$textbook'";
         return $this->db_fetch_all($sql); 
     }
     public function viewNonfictionbooks($nonfiction){

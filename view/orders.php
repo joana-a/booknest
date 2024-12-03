@@ -24,7 +24,7 @@ if (isset($_SESSION['user_id'])) {
 <?php include '../view/header.php'; ?>
 
 <div class="heading">
-   <h3>your orders</h3>
+   <h3>my orders</h3>
    <p> <a href="../view/home.php">home</a> / orders </p>
 </div>
 

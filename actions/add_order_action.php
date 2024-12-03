@@ -3,7 +3,7 @@ require "../controllers/order_controller.php";
 require "../controllers/cart_controller.php";
 
 session_start();
-
+ 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $customer_id = $_SESSION['user_id'];
     $cart_items = viewCart_ctr($customer_id); 
@@ -23,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Add order details
             foreach ($cart_items as $item) {
                 add_order_details_controller($order_id, $item['book_id'], $item['quantity'], $item['price']);
+                clearUserCart_ctr($customer_id);
             }
 
             header("Location: ../view/checkout.php");

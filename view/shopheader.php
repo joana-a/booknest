@@ -33,7 +33,7 @@ if (isset($_SESSION['user_id'])) {
 <a href="books_by_genre.php?genre=thriller">Thriller</a>
 <a href="books_by_genre.php?genre=afrilit">African</a>
 <a href="books_by_genre.php?genre=scifi">Sci-Fi</a>
-<a href="books_by_genre.php?genre=textbooks">Textbooks</a>
+<a href="books_by_genre.php?genre=textbook">Textbooks</a>
 <!-- <a href="books_by_genre.php?genre=nonfiction">Non-Fiction</a> -->
 
             </nav>

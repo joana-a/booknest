@@ -29,7 +29,7 @@ if (isset($_SESSION['user_id'])) {
       <?php
       require_once '../controllers/bookcontroller.php';
 
-      // Get the genre from the query string
+      
       $genre = isset($_GET['genre']) ? htmlspecialchars($_GET['genre']) : '';
 
       // Fetch books based on genre
@@ -49,7 +49,7 @@ if (isset($_SESSION['user_id'])) {
           case 'scifi':
               $books = get_scifi_books_controller($genre);
               break;
-          case 'textbooks':
+          case 'textbook':
               $books = get_textbooks_books_controller($genre);
               break;
           case 'nonfiction':

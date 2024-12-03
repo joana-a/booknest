@@ -27,7 +27,7 @@
 
       <input type="text" name="author" class="box" placeholder="Enter book author" required>
 
-      <select name="genre" required>
+      <select name="genre" class= "box" required>
             <option value="" disabled selected>Select Genre</option>
             <option value="fantasy">Fantasy</option>
             <option value="thriller">Thriller</option>
@@ -41,7 +41,7 @@
       
       <input type="number" name="price" class="box" placeholder="Enter book price" required>
 
-      <select name="bookcondition" required>
+      <select name="bookcondition" class= "box" required>
             <option value="" disabled selected>Select Book's Condition</option>
             <option value="new">New</option>
             <option value="like new">like new</option>

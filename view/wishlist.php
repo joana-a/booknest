@@ -23,7 +23,10 @@ if (isset($_SESSION['user_id'])) {
 <body>
 <?php include '../view/header.php'; ?>
 
-
+<div class="heading"> 
+    <h3>my wishlist</h3>
+    <p><a href="../view/home.php">Home</a> / Wishlist</p>
+</div>
 
 <section class="show-products">
 

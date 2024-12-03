@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<div class="heading">
+<div class="heading"> 
     <h3>Shopping Cart</h3>
     <p><a href="../view/home.php">Home</a> / Cart</p>
 </div>
