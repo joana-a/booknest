@@ -1,4 +1,3 @@
-BookNest
 BookNest is an online platform for book lovers to discover, explore, and purchase their favorite books. 
 What sets BookNest apart from other competitors is the fact that BookNest sells mainly thrift books, so prices are much more affordable.
 With a curated collection of books, seamless user experience, a focus on balancing affordability with quality, and convenient features, BookNest aims to provide a delightful shopping experience for book enthusiasts.
