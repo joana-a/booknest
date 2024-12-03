@@ -41,7 +41,7 @@ if (isset($_SESSION['user_id'])) {
                <p>Placed on: <span><?php echo $item['created_at']; ?></span></p>
                <p>Total amount: <span>$<?php echo $item['total_amount']; ?></span></p>
                <p>Order status: 
-                  <span style="color: <?php echo ($item['order_status'] == 'Completed') ? 'red' : 'green'; ?>;">
+                  <span style="color: <?php echo ($item['order_status'] == 'Pending') ? 'red' : 'green'; ?>;">
                      <?php echo $item['order_status']; ?>
                   </span>
                </p>

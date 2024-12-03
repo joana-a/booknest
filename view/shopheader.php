@@ -2,7 +2,7 @@
 include_once '../settings/db_class.php';
 
 $db = new db_connection();
-
+ 
 $mysqli = $db->db_conn();
 
 if (isset($_SESSION['user_id'])) {

@@ -8,17 +8,15 @@
 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
    <link rel="stylesheet" href="../css/admin.css">
-   <!-- <link rel="stylesheet" href="../css/stylee.css"> -->
+   <link rel="stylesheet" href="../css/stylee.css">
 </head>
 <body>
+<?php include '../view/admin_header.php'; ?>
 
 <section class="add-products">
   
    <h1 class="title">All Books</h1>
-   <p style="text-align: center; font-size: 24px; font-weight: bold;">
-    <a href="../view/admin_dashboard.php" style="text-decoration: none; color: #007bff; padding: 0px 10px; 
-    border-radius: 5px; font-weight: bold; background-color: #f8f9fa;">Dashboard</a> / Books
-</p>
+   
 
 
 
